@@ -10,6 +10,8 @@ on:
 jobs:
   build-gerber-file:
     runs-on: ubuntu-latest
+    container:
+      image: setsoft/kicad_auto:ki6
     env:
       gerber_dir: 'dist'
       gerber_zip_file: thin-key-${{ github.sha }}.zip
