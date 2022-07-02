@@ -3,4 +3,7 @@
 	url = git@github.com:shikamiya/kicad-footprint-kailh-pg1425-x-switch.git
 [submodule "libraries/kbd"]
 	path = libraries/kbd
-	url = git@github.com:foostan/kbd.git
+	url = git@github.com:flat35hd99/kbd.git
+[submodule "libraries/rp-pico"]
+	path = libraries/rp-pico
+	url = git@github.com:ncarandini/KiCad-RP-Pico.git
