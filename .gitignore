@@ -2,3 +2,5 @@ thin-key-backups/
 _autosave*
 *auto_saved*
 *cache
+dist/
+*.zip
