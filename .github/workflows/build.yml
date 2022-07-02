@@ -34,7 +34,7 @@ jobs:
 
     - name: Archive gerber files
       if: ${{ contains(github.ref, 'refs/tags/v') }}
-      run: apt install zip;zip -r --junk-paths ${{ env.gerber_zip_file }} ${{ env.gerber_dir }}
+      run: apt-get update && apt-get install zip;zip -r --junk-paths ${{ env.gerber_zip_file }} ${{ env.gerber_dir }}
 
     - name: Release to GitHub
       if: ${{ contains(github.ref, 'refs/tags/v') }}
