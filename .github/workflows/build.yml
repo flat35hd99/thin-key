@@ -13,16 +13,15 @@ jobs:
     env:
       gerber_dir: 'dist'
       gerber_zip_file: thin-key-${{ github.sha }}.zip
+      schema: 'thin-key.kicad_sch'
+      board: 'thin-key.kicad_pcb'
     steps:
     - uses: actions/checkout@v2
 
     - name: Export gerber
-      uses: nerdyscout/kicad-exports@v2.0
-      with:
-        config: .kiplot.yaml
-        dir: ${{ env.gerber_dir }}
-        board: thin-key.kicad_pcb
-        schema: thin-key.kicad_sch
+      run: |
+        kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.gerber_dir}} \
+        -s run_erc,run_drc -v gerbers.gbr drills.gbr drills.drl
 
     - name: Upload gerber files as artifact
       if: ${{ ! contains(github.ref, 'refs/tags/v') }}
