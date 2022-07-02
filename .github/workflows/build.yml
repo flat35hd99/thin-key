@@ -1,0 +1,43 @@
+name: Build zipfile
+
+on:
+  push:
+    branches:
+      - '*'
+  release:
+    types: [created]
+
+jobs:
+  build-gerber-file:
+    runs-on: ubuntu-latest
+    env:
+      gerber_dir: 'dist'
+      gerber_zip_file: thin-key-${{ github.sha }}.zip
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Export gerber
+      uses: nerdyscout/kicad-exports@v2.0
+      with:
+        config: .kiplot.yaml
+        dir: ${{ env.gerber_dir }}
+        board: thin-key.kicad_pcb
+        schema: thin-key.kicad_sch
+
+    - name: Upload gerber files as artifact
+      if: ${{ ! contains(github.ref, 'refs/tags/v') }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: thin-key-${{ github.sha }}
+        path: ${{ env.gerber_dir }}
+
+    - name: Archive gerber files
+      if: ${{ contains(github.ref, 'refs/tags/v') }}
+      run: zip -r --junk-paths ${{ env.gerber_zip_file }} ${{ env.gerber_dir }}
+
+    - name: Release to GitHub
+      if: ${{ contains(github.ref, 'refs/tags/v') }}
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ${{ env.gerber_zip_file }}
+        draft: true
