@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name "kbd")(type "KiCad")(uri "${KIPRJMOD}/libraries/kbd/kicad-footprints/kbd.pretty")(options "")(descr ""))
+  (lib (name "RPi-Pico")(type "KiCad")(uri "${KIPRJMOD}/libraries/rp-pico/RP-Pico Libraries/MCU_RaspberryPi_and_Boards.pretty")(options "")(descr ""))
+  (lib (name "pg1425")(type "KiCad")(uri "${KIPRJMOD}/libraries/pg1425/kailh-pg1425-x-switch.pretty")(options "")(descr ""))
+)
