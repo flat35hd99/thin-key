@@ -1,0 +1,6 @@
+[submodule "libraries/pg1425"]
+	path = libraries/pg1425
+	url = git@github.com:shikamiya/kicad-footprint-kailh-pg1425-x-switch.git
+[submodule "libraries/kbd"]
+	path = libraries/kbd
+	url = git@github.com:foostan/kbd.git
