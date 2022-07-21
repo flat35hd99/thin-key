@@ -1,9 +1,9 @@
+require "via"
+
 kbd = Keyboard.new
 
-kbd.init_pins(
-    [18, 19], # rows
-    [16, 17]  # cols
-)
+kbd.via = true
+kbd.via_layer_count = 2
 
 # Physical matrix
 #  ------------
@@ -17,6 +17,10 @@ kbd.init_pins(
 # | 2 4 |
 #  -----
 # in scheme
+kbd.init_pins(
+    [18, 19], # rows
+    [16, 17]  # cols
+)
 
 # --------------
 # RAISE, A, B, C
