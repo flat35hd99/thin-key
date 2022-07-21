@@ -6,6 +6,10 @@
   - You can order this pcb for 2dollars at JLCPCB
 - Raspberry Pi Pico
 
+## How to create
+
+[See this build guide page](BUILD_GUIDE.md)
+
 ## Pictures
 
 If you create your product, Please make PR with your pictures!
