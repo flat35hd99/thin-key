@@ -26,16 +26,8 @@ kbd.init_pins(
 # RAISE, A, B, C
 # --------------
 kbd.add_layer :default, %i(
-    KC_A RAISE
-    KC_C KC_B 
-)
-
-# -------------
-# (No), 1, 2, 3
-# -------------
-kbd.add_layer :raise, %i(
-    KC_1 KC_NO
-    KC_3 KC_2
+    KC_A KC_C
+    KC_LCTL KC_B 
 )
 
 kbd.define_mode_key :RAISE, [ nil, :raise, nil, nil ]
