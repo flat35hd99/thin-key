@@ -1,5 +1,7 @@
 # Thin-key
 
+![Assembled keyboard](picture/assembled.jpg)
+
 - Kailh x switch
 - 4x1 matrix
 - 77 mm x 44 mm
